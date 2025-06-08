@@ -13,7 +13,6 @@
                 <th>Jam</th>
                 <th>Durasi</th>
                 <th>Mata Kuliah</th>
-                <th>Ruang</th>
                 <th>Dosen Koordinator</th>
             </tr>
             </thead>
@@ -25,7 +24,6 @@
                     <td>{{ $jadwal->start }} - {{ $jadwal->end }}</td>
                     <td>{{ \Carbon\Carbon::parse($jadwal->start)->diffInMinutes($jadwal->end) }} menit</td>
                     <td>{{ $jadwal->matkul->nama_matkul ?? '-' }}</td>
-                    <td>{{ $jadwal->ruang ?? '-' }}</td>
                     <td>{{ $jadwal->dosen->name ?? '-' }}</td>
                 </tr>
             @endforeach
