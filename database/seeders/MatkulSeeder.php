@@ -13,7 +13,7 @@ class MatkulSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
 
         DB::table('matkuls')->insert([
             ['nama_matkul' => 'Workshop Mobile Framework B',

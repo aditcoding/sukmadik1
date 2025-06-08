@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 
 @section('dashboardsection')
-    <h1>Welcome Back Sir Alex Ferguson</h1>
+    <h1>Welcome Back Mahasiswa Polije</h1>
 
     <div class="table-responsive mb-4">
         <h5>Jadwal Perkuliahan</h5>
@@ -13,18 +13,40 @@
                 <th>Jam</th>
                 <th>Durasi</th>
                 <th>Mata Kuliah</th>
+                <th>SKS</th>
                 <th>Dosen Koordinator</th>
             </tr>
             </thead>
             <tbody>
             @foreach($jadwals as $index => $jadwal)
+                @php
+                    $duration = '-';
+                    $jam = '-';
+
+                    try {
+                        if ($jadwal->start && $jadwal->end) {
+                            $start = \Carbon\Carbon::parse($jadwal->start);
+                            $end = \Carbon\Carbon::parse($jadwal->end);
+
+                            $jam = $start->format('H:i') . ' - ' . $end->format('H:i');
+                            $diff = $start->diffInMinutes($end);
+
+                            if ($diff > 0) {
+                                $duration = $diff . ' menit';
+                            }
+                        }
+                    } catch (\Exception $e) {
+                        // Lak Error, nilai default '-'
+                    }
+                @endphp
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $jadwal->hari }}</td>
-                    <td>{{ $jadwal->start }} - {{ $jadwal->end }}</td>
-                    <td>{{ \Carbon\Carbon::parse($jadwal->start)->diffInMinutes($jadwal->end) }} menit</td>
+                    <td>{{ $jadwal->jadwal->Hari ?? '-' }}</td>
+                    <td>{{ $jam }}</td>
+                    <td>{{ $duration }}</td>
                     <td>{{ $jadwal->matkul->nama_matkul ?? '-' }}</td>
-                    <td>{{ $jadwal->dosen->name ?? '-' }}</td>
+                    <td>{{ $jadwal->sks ?? '-' }}</td>
+                    <td>{{ $jadwal->dosen->nama ?? '-' }}</td>
                 </tr>
             @endforeach
             </tbody>

@@ -37,7 +37,7 @@ class JadwalSeeder extends Seeder
             ['hari' => 'Rabu', 'id_semester' => '4' ],
             ['hari' => 'Kamis', 'id_semester' => '4' ],
             ['hari' => 'Jumat', 'id_semester' => '4' ],
-        
+
         ]);
     }
 }
