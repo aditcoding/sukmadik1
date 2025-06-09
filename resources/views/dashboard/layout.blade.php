@@ -63,7 +63,7 @@
     </div>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
+            <a href="/" class="nav-link">
               <img src="../img/home.svg" alt="Beranda" class="icon"> Dashboard
             </a>
           </li>
