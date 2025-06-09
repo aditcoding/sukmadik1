@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pengajuan_bimbingans', function (Blueprint $table) {
             $table->id('id_pengajuan');
             $table->string('nama_pengajuan');
-            $table->string('NIM');
+            $table->string('nim');
             $table->text('catatan');
             $table->date('tanggal');
 

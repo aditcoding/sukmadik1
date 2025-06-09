@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 // Import semua model yang dipakai
 use App\Models\Prodi;
-use App\Models\PengajuanBimbingan;
+use App\Models\pengajuanBimbingan;
 use App\Models\Matkul;
 use App\Models\DetailJadwalAbsensi;
 

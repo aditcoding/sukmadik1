@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pengajuan_bimbingan;
+
+use App\Models\pengajuanBimbingan;
 use Illuminate\Http\Request;
 
 class BimbinganController extends Controller
@@ -12,7 +13,7 @@ class BimbinganController extends Controller
      */
     public function index()
     {
-        $pengajuan = pengajuan_bimbingan::all();
+        $pengajuan = PengajuanBimbingan::all();
         return response()->json($pengajuan);
     }
 
@@ -29,7 +30,7 @@ class BimbinganController extends Controller
             'NIM' => 'required|string|max:20',
         ]);
 
-        $pengajuan = pengajuan_bimbingan::create([
+        $pengajuan = PengajuanBimbingan::create([
             'nama_pengajuan' => $request->nama_pengajuan,
             'catatan' => $request->catatan,
             'tanggal' => $request->tanggal,
@@ -50,7 +51,7 @@ class BimbinganController extends Controller
      */
     public function show($id)
     {
-        $pengajuan = pengajuan_bimbingan::find($id);
+        $pengajuan = PengajuanBimbingan::find($id);
 
         if (!$pengajuan) {
             return response()->json(['message' => 'Pengajuan tidak ditemukan'], 404);
@@ -64,7 +65,7 @@ class BimbinganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pengajuan = pengajuan_bimbingan::find($id);
+        $pengajuan = PengajuanBimbingan::find($id);
 
         if (!$pengajuan) {
             return response()->json(['message' => 'Pengajuan tidak ditemukan'], 404);
@@ -89,7 +90,7 @@ class BimbinganController extends Controller
      */
     public function destroy($id)
     {
-        $pengajuan = pengajuan_bimbingan::find($id);
+        $pengajuan = PengajuanBimbingan::find($id);
 
         if (!$pengajuan) {
             return response()->json(['message' => 'Pengajuan tidak ditemukan'], 404);

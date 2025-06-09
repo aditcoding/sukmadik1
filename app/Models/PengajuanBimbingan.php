@@ -4,21 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pengajuan_bimbingan extends Model
+class PengajuanBimbingan extends Model
 {
+    protected $table = 'pengajuan_bimbingans';
 
-    protected $primaryKey = 'id_pengajuan';
     protected $fillable = [
-        'nama_pengajuan',
-        'NIM',
-        'catatan',
-        'tanggal',
-        'status',
-        'id_user',
-        'id_kampus',
-        'id_jurusan',
-        'id_prodi',
-        'id_d_jadwal',
+        'nama_pengajuan', 'nama', 'nim', 'catatan', 'tanggal', 'status',
+        'id_user', 'id_kampus', 'id_jurusan', 'id_prodi', 'id_semester'
     ];
 
     public function user()
@@ -35,7 +27,7 @@ class pengajuan_bimbingan extends Model
     {
         return $this->belongsTo(jurusan::class, 'id_jurusan');
     }
-    
+
     public function prodi()
     {
         return $this->belongsTo(prodi::class, 'id_prodi');
@@ -43,6 +35,6 @@ class pengajuan_bimbingan extends Model
 
     public function detail_sesi()
     {
-    return $this->hasMany(detail_sesi::class, 'id_d_sesi');    
+    return $this->hasMany(detail_sesi::class, 'id_d_sesi');
     }
 }

@@ -8,7 +8,7 @@
         <table class="table table-bordered table-striped">
             <thead class="table-light">
             <tr>
-                <th>No</th>
+{{--                <th>No</th>--}}
                 <th>Hari</th>
                 <th>Jam</th>
                 <th>Durasi</th>
@@ -40,7 +40,7 @@
                     }
                 @endphp
                 <tr>
-                    <td>{{ $index + 1 }}</td>
+{{--                    <td>{{ $index + 1 }}</td>--}}
                     <td>{{ $jadwal->jadwal->Hari ?? '-' }}</td>
                     <td>{{ $jam }}</td>
                     <td>{{ $duration }}</td>

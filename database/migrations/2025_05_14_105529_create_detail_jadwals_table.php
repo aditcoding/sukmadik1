@@ -13,23 +13,23 @@ return new class extends Migration
     {
         Schema::create('detail_jadwals', function (Blueprint $table) {
             $table->id('Id_d_Jadwal');
-            $table->time('Start');
-            $table->time('End');
-            $table->integer('SKS');
+            $table->time('start'); //Ojok nggae huruf gede lak gae tabel nde database
+            $table->time('end');
+            $table->integer('sks');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')
-                ->references('id_user') 
-                ->on('users')            
+                ->references('id_user')
+                ->on('users')
                 ->onDelete('cascade');
            $table->unsignedBigInteger('id_matkul');
             $table->foreign('id_matkul')
-                ->references('id_matkul') 
-                ->on('matkuls')            
+                ->references('id_matkul')
+                ->on('matkuls')
                 ->onDelete('cascade');
             $table->unsignedBigInteger('id_jadwal');
             $table->foreign('id_jadwal')
-                ->references('id_jadwal') 
-                ->on('jadwals')            
+                ->references('id_jadwal')
+                ->on('jadwals')
                 ->onDelete('cascade');
         });
     }

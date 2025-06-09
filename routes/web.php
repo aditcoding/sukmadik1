@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardJadwal;
+use App\Http\Controllers\PengajuanBimbinganController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KampusController;
 use App\Http\Controllers\LandingController;
@@ -20,6 +21,8 @@ Route::get('/', [DashboardJadwal::class, 'index'])->name('dashboard.jadwal');
 //    return view('dashboard.welcome');
 //});
 
+Route::get('/pengajuan-bimbingan', [PengajuanBimbinganController::class, 'create'])->name('pengajuan.create');
+Route::post('/pengajuan-bimbingan', [PengajuanBimbinganController::class, 'store'])->name('pengajuan.store');
 
 //Admin
 Route::get('/admin', function () {

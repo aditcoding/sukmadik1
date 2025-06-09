@@ -65,12 +65,12 @@
         <li class="nav-item">
             <a href="/dashboard" class="nav-link">
               <img src="../img/home.svg" alt="Beranda" class="icon"> Dashboard
-            </a> 
+            </a>
           </li>
       <li class="nav-item">
-        <a href="/mhs" class="nav-link">
+        <a href="/pengajuan-bimbingan" class="nav-link">
           <img src="../img/mhstab.svg" alt="Beranda" class="icon"> Mahasiswa
-        </a> 
+        </a>
       </li>
       <li>
         <a href="/dosen" class="nav-link">
@@ -87,14 +87,14 @@
   </div>
 
 <div class="flex-grow-1 p-3">
-    
+
     <!-- Konten utama -->
     <!-- Isi konten untuk halaman Dosen bisa ditambahkan di sini -->
     @yield('dashboardsection')
-    
+
 </div>
 
-  
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
